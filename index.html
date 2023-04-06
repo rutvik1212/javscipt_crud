@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="	https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <style>
+        label {
+            display: block;
+            margin-top: 5px;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .input_field {
+            width: 100%;
+        }
+
+        .btn_set {
+            position: relative;
+        }
+
+        .checkbox_heading {
+            height: 18px;
+            width: 18px;
+        }
+
+        .check_set {
+            padding-top: 15px !important;
+        }
+
+        /* @keyframes move {
+            0%{transform: translateX(0px);}
+            25%{transform: translateX(50px);}
+            50%{transform: translateX(-50px);}
+            100%{transform: translateX(0px);}
+        }
+        #form_heading{
+            animation-name: move;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+        } */
+    </style>
+</head>
+
+<body>
+
+    <div style="background-color: skyblue;">
+        <h1 class="text-center mb-5 text-white" id="form_heading">Form</h1>
+        <form action="" class=" w-50 mx-auto p-3 shadow-lg bg-white" id="form">
+            <input type="hidden" name="id" value="0" class="input_field">
+            <label for="fname">First Name</label>    
+            <input type="text" id="fname" class="input_field" name="fname">
+            <label for="lname">Last Name</label>
+            <input type="text" id="lname" class="input_field" name="lname">
+            <label for="email">Email Id</label>
+            <input type="email" id="email" class="input_field" name="email">
+            <label for="number">Mobile Number</label>
+            <input type="number" id="number" class="input_field" name="number">
+            <label for="dob">DOB</label>
+            <input type="date" id="dob" class="input_field" name="dob">
+            <label for="">Gender</label>
+            <input type="radio" name="gender" value="Male" class="gender">Male
+            <input type="radio" name="gender" value="Female" class="gender">Female
+            <label for="">Hobbies</label>
+            <input type="checkbox" name="hobbies" value="Reading" class="hobbies"> Reading
+            <input type="checkbox" name="hobbies" value="Playing" class="hobbies"> Playing
+            <input type="checkbox" name="hobbies" value="Swimming" class="hobbies"> Swimming
+
+            <!-- for dependecy dropdown -->
+            <label for="">Country</label>
+            <select name="country" id="country" class="input_field"></select>
+            <label for="">State</label>
+            <select name="state" id="state" class="input_field  stay"></select>
+            <label for="">City</label>  
+            
+            <select name="city" id="city" class="input_field  stay"></select>
+
+            <input type="submit" class="mt-3 border-0 text-bg-success px-4 py-2 fs-5 rounded " id="submit"
+                value="Submit"></input>
+            <span id="delete_btn" class="delete_btn_cls"></span>
+
+
+            <input type="button" class="mt-3 border-0 text-bg-success px-4 py-2 fs-5 rounded" id="delete" value="Delete"
+                onclick="Delete(this)" style="display: none;"></input>
+
+
+        </form>
+
+        <table class="w-100 mt-5 table table-info table-striped" id="table">
+            <thead>
+                <tr>
+                    <td class="check_set"> <input type="checkbox" class="checkbox_heading" id="main_checkbox"
+                            onchange="checkAll(this,event)"></td>
+                    <th>ID</th>
+                    <th>FIRST NAME</th>
+                    <th>LAST NAME</th>
+                    <th>EMAIL</th>
+                    <th>MOBILE NO</th>
+                    <th>DOB</th>
+                    <th>GENDER</th>
+                    <th>HOBBIES</th>
+                    <th>COUNTRY</th>
+                    <th>STATE</th>
+                    <th>CITY</th>
+                    <!-- <th>SELECTED</th> -->
+                    <th>ACTION</th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+
+            </tbody>
+        </table>
+
+    </div>
+
+    <script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
